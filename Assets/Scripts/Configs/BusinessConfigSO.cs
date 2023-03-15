@@ -7,6 +7,6 @@ namespace Configs
     [CreateAssetMenu(fileName = "NewBusiness", menuName = "CreateBusinessConfig")]
     public class BusinessConfigSO : ScriptableObject
     {
-        public List<InitBusinessData> Businesses;
+        public List<BusinessData> Businesses;
     }
 }

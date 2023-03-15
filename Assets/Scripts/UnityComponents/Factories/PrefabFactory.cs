@@ -23,8 +23,7 @@ namespace UnityComponents.Factories
             prefInstance.name = (spawnData.Name == string.Empty) ? spawnData.Prefab.name : spawnData.Name;
             var monoEntity = prefInstance.GetComponent<MonoEntity>();
 
-            var entity = _world.NewEntity();
-            monoEntity.Make(ref entity);
+            monoEntity.Make(ref spawnData.Entity);
         }
     }
 }

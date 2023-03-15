@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 3722570590557097513}
   - component: {fileID: 5750839038314812648}
   - component: {fileID: 7439819351411596120}
+  - component: {fileID: 5251216461647554337}
   m_Layer: 5
   m_Name: UpgradeButton
   m_TagString: Untagged
@@ -304,6 +305,7 @@ RectTransform:
   - {fileID: 6891124160938170822}
   - {fileID: 4057818824522811024}
   - {fileID: 7185073475658187959}
+  - {fileID: 2459283324278479984}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -394,6 +396,23 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5251216461647554337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546209470803314296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551670aeb8f5b6a42827aec518da1988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _label: {fileID: 7853346523579501541}
+  _bonus: {fileID: 1526068553111722548}
+  _cost: {fileID: 1869616473137257262}
+  _purchasedBanner: {fileID: 6430173650068921622}
+  _costInfo: {fileID: 2967070392264383705}
 --- !u!1 &2104485983573353397
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +580,6 @@ RectTransform:
   - {fileID: 3568917702452663307}
   - {fileID: 1859712421545543248}
   - {fileID: 1208021687134690645}
-  - {fileID: 2459283324278479984}
   m_Father: {fileID: 780628462040977635}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -896,13 +914,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7185073475658187959}
+  m_Father: {fileID: 780628462040977635}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 194.8, y: -50}
-  m_SizeDelta: {x: 114.98, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -26.2}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1675986033549754276
 CanvasRenderer:
@@ -959,8 +977,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
