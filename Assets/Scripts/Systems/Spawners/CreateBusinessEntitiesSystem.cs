@@ -1,6 +1,9 @@
-﻿using Components.BusinessParams;
+﻿using System.Collections.Generic;
+using Components.BusinessParams;
 using Components.Common;
+using Components.WorldStatuses;
 using Leopotam.Ecs;
+using Utilities;
 
 namespace Systems.Spawners
 {
@@ -13,7 +16,14 @@ namespace Systems.Spawners
 
         public void Init()
         {
-            foreach (var business in _sceneData._gameConfig.Businesses)
+            List<BusinessData> businesses;
+            if (SaveUtility.HaveLocalData())
+                businesses = SaveUtility.LoadBusinessData();
+            else
+                businesses = _sceneData._gameConfig.Businesses;
+
+            SaveUtility.SaveLocalDataState();
+            foreach (var business in businesses)
                 _world.NewEntity().Get<BusinessData>() = business;
         }
 
@@ -32,6 +42,7 @@ namespace Systems.Spawners
                 entity.Get<Revenue>() = new Revenue { Value = initData.BaseRevenue };
                 entity.Get<BaseLvlUpCost>() = new BaseLvlUpCost { Value = initData.BaseLvlUpCost };
                 entity.Get<LvlUpCost>() = new LvlUpCost { Value = initData.BaseLvlUpCost };
+                entity.Get<BusinessName>() = new BusinessName { Value = initData.Label };
 
                 entity.Get<Upgrades>() = new Upgrades
                 {
@@ -51,6 +62,8 @@ namespace Systems.Spawners
                     Prefab = _staticData.BusinessPref
                 };
 
+                _world.NewEntity().Get<OnBusinessesSave>();
+                
                 entity.Del<BusinessData>();
             }
         }

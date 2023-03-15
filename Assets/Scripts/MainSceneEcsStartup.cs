@@ -36,6 +36,7 @@ public class MainSceneEcsStartup : MonoBehaviour
             .Add(businessManagmentSystems)
             .Add(updateViewSystems)
             .Add(releaseSystems)
+            .Add(new SaveProgressSystem())
             .Inject(_sceneData)
             .Inject(_statciData)
             .Init();

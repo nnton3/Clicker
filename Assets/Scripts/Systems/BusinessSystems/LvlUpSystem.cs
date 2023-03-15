@@ -30,6 +30,7 @@ namespace Systems.BusinessSystems
                 entity.Get<OnLvlUpdate>() = new OnLvlUpdate { Value = lvl };
                 entity.Get<OnLvlUpCostUpdate>() = new OnLvlUpCostUpdate();
                 entity.Get<OnRevenueUpdate>() = new OnRevenueUpdate();
+                _world.NewEntity().Get<OnBusinessesSave>();
             }
         }
     }

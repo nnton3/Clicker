@@ -1,11 +1,28 @@
 ﻿using System.Collections.Generic;
 using Components.BusinessParams;
 using Gameframe.SaveLoad;
+using UnityEngine;
 
 namespace Utilities
 {
     public static class SaveUtility
     {
+        private static GameModel _model;
+        private static GameModel Model
+        {
+            get
+            {
+                if (_model != null) return _model;
+                Debug.Log($"Save location {Application.persistentDataPath}");
+                var saveFilesCount = SaveManagerInstance.GetFiles(null).Length;
+                if (saveFilesCount > 0)
+                    _model = SaveManagerInstance.Load<GameModel>("gameProgress.txt");
+                else
+                    _model = new GameModel();
+
+                return _model;
+            }
+        }
         private static SaveLoadManager _saveManagerInstance;
         private static SaveLoadManager SaveManagerInstance
         {
@@ -20,19 +37,33 @@ namespace Utilities
             }
         }
 
-        public static void SaveProgress()
+        public static void SaveBusinessesProgress(List<BusinessData> businesses)
         {
-
+            Model.Businesses = businesses;
+            SaveManagerInstance.Save(Model, "gameProgress.txt");
         }
 
-        public static List<BusinessData> LoadBusinessData()
+        public static void SaveBalance(int balance)
         {
-            return new List<BusinessData>();
+            Model.Balance = balance;
+            SaveManagerInstance.Save(Model, "gameProgress.txt");
         }
 
-        public static int LoadBalance()
+        public static void SaveLocalDataState()
         {
-            return 0;
+            Model.HaveLocalData = true;
+            SaveManagerInstance.Save(Model, "gameProgress.txt");
         }
+
+        public static List<BusinessData> LoadBusinessData() => Model.Businesses;
+        public static int LoadBalance() => Model.Balance;
+        public static bool HaveLocalData() => Model.HaveLocalData;
+    }
+
+    public class GameModel
+    {
+        public int Balance;
+        public List<BusinessData> Businesses;
+        public bool HaveLocalData;
     }
 }
