@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 namespace Components.BusinessParams
 {
@@ -15,11 +14,19 @@ namespace Components.BusinessParams
     }
 
     [Serializable]
-    public class BusinessUpgrade
+    public struct BusinessUpgrade
     {
         public string Label;
         public int RevenueBonus;
         public int UpgradeCost;
-        [HideInInspector] public bool Purchased;
+        /*[HideInInspector] */public bool Purchased;
+
+        public BusinessUpgrade(BusinessUpgrade data)
+        {
+            Label = data.Label;
+            RevenueBonus = data.RevenueBonus;
+            UpgradeCost = data.UpgradeCost;
+            Purchased = data.Purchased;
+        }
     }
 }

@@ -18,9 +18,19 @@ namespace Systems.Spawners
         {
             List<BusinessData> businesses;
             if (SaveUtility.HaveLocalData())
+            {
                 businesses = SaveUtility.LoadBusinessData();
+            }
             else
-                businesses = _sceneData._gameConfig.Businesses;
+            {
+                businesses = new List<BusinessData>(_sceneData._gameConfig.Businesses);
+                for (int i = 0; i < businesses.Count; i++)
+                    for (int j = 0; j < businesses[i].Upgrades.Length; j++)
+                        businesses[i].Upgrades[j] = new BusinessUpgrade(
+                            _sceneData._gameConfig.Businesses[i].Upgrades[j]);
+                
+                SaveUtility.SaveBusinessesProgress(businesses);
+            }
 
             SaveUtility.SaveLocalDataState();
             foreach (var business in businesses)

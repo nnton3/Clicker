@@ -16,6 +16,7 @@ namespace Systems.BusinessSystems
             {
                 var view = _updateFilter.Get2(index).View;
                 view.InitUpgrades(_updateFilter.Get1(index).Array);
+                _updateFilter.GetEntity(index).Del<OnUpdateUpgradesView>();
             }
         }
     }

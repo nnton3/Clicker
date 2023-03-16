@@ -20,9 +20,9 @@ namespace Systems.BusinessSystems
                 ref var upgrades = ref _updateFilter.Get1(index);
                 var upgradeIndex = _updateFilter.Get3(index).Index;
                 var targetUpgrade = upgrades.Array[upgradeIndex];
-                targetUpgrade.Purchased = true;
                 if (targetUpgrade.UpgradeCost > _balanceFilter.Get1(0).Value) continue;
 
+                targetUpgrade.Purchased = true;
                 _world.NewEntity().Get<ModifyBalance>() = new ModifyBalance
                 {
                     Value = -targetUpgrade.UpgradeCost

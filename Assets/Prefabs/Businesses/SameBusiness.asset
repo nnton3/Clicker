@@ -22,9 +22,11 @@ MonoBehaviour:
     - Label: "\u0422\u043E\u0440\u0442\u044B"
       RevenueBonus: 50
       UpgradeCost: 50
+      Purchased: 0
     - Label: "\u0427\u0438\u0437\u043A\u0435\u0439\u043A\u0438"
       RevenueBonus: 100
       UpgradeCost: 400
+      Purchased: 0
   - Label: "\u042F\u043F\u043E\u043D\u0441\u043A\u0438\u0439 \u0440\u0435\u0441\u0442\u043E\u0440\u0430\u043D"
     Lvl: 0
     BaseRevenue: 40
@@ -34,9 +36,11 @@ MonoBehaviour:
     - Label: "\u0421\u0443\u0448\u0438"
       RevenueBonus: 100
       UpgradeCost: 1200
+      Purchased: 0
     - Label: "\u0412\u043E\u043A"
       RevenueBonus: 200
       UpgradeCost: 4000
+      Purchased: 0
   - Label: "\u041F\u0438\u0446\u0446\u0435\u0440\u0438\u044F"
     Lvl: 0
     BaseRevenue: 200
@@ -46,9 +50,11 @@ MonoBehaviour:
     - Label: "\u041D\u0430 \u0442\u043E\u043D\u043A\u043E\u043C \u0442\u0435\u0441\u0442\u0435"
       RevenueBonus: 100
       UpgradeCost: 6000
+      Purchased: 0
     - Label: "\u0410\u0441\u0441\u043E\u0440\u0442\u0438"
       RevenueBonus: 150
       UpgradeCost: 20000
+      Purchased: 0
   - Label: "\u0411\u0430\u0440"
     Lvl: 0
     BaseRevenue: 1000
@@ -58,9 +64,11 @@ MonoBehaviour:
     - Label: "\u041A\u0440\u0430\u0444\u0442\u043E\u0432\u043E\u0435 \u043F\u0438\u0432\u043E"
       RevenueBonus: 50
       UpgradeCost: 15000
+      Purchased: 0
     - Label: "\u0422\u0435\u043B\u0435\u0432\u0438\u0437\u043E\u0440"
       RevenueBonus: 100
       UpgradeCost: 50000
+      Purchased: 0
   - Label: "\u0410\u043A\u0432\u0430\u043F\u0430\u0440\u043A"
     Lvl: 0
     BaseRevenue: 5000
@@ -70,7 +78,9 @@ MonoBehaviour:
     - Label: "\u0417\u0438\u043C\u043D\u0438\u0439 \u0441\u0435\u0437\u043E\u043D"
       RevenueBonus: 200
       UpgradeCost: 100000
+      Purchased: 0
     - Label: "\u0421\u043E\u0432\u0440\u0435\u043C\u0435\u043D\u043D\u043E\u0435
         \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u0435"
       RevenueBonus: 400
       UpgradeCost: 500000
+      Purchased: 0
