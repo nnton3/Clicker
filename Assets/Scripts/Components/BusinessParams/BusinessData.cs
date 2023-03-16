@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Components.BusinessParams
 {
@@ -19,6 +20,6 @@ namespace Components.BusinessParams
         public string Label;
         public int RevenueBonus;
         public int UpgradeCost;
-        [NonSerialized] public bool Purchased;
+        [HideInInspector] public bool Purchased;
     }
 }
